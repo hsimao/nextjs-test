@@ -16,7 +16,8 @@ export const handlers = [
     (req, res, ctx) => {
       const { userId } = req.params;
 
-      // return fakeUserReservations if userId is 1; empty array otherwise
+      // userId = 1 有預定資料
+      // userId != 1 沒有預定資料
       const userReservations = Number(userId) === 1 ? fakeUserReservations : [];
       return res(ctx.json({ userReservations }));
     }
